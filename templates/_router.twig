@@ -1,0 +1,21 @@
+{# Grab the parent #}
+{% set parent = craft.entries({uri: parentUri})|one %}
+
+{# If parent wasn't found, 404 #}
+{% if not parent %}
+	{% exit 404 %}
+{% endif %}
+
+{# Find the appropriate entry #}
+{% set entry = craft.entries({
+	section: parent.type|replace('Listing', ''),
+	slug: slug
+})|one %}
+
+{# If entry isn't set, we didn't find anything. Stop. #}
+{% if not entry %}
+	{% exit 404 %}
+{% endif %}
+
+{# Pass out to the standard stack #}
+{% include '_entry' %}

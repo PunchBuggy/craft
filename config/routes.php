@@ -19,5 +19,8 @@
  */
 
 return [
-
+	// Handle listing pages
+	'<parentUri:.+>/<slug:[^/]+>' => [
+		'template' => '_router'
+	]
 ];

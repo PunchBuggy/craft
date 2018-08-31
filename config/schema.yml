@@ -136,7 +136,35 @@ generalSettings:
     name: Bootstrap
     'on': '1'
     maintenance: '0'
-sections: {  }
+sections:
+  pages:
+    class: craft\models\Section
+    attributes:
+      name: Pages
+      handle: pages
+      type: structure
+      maxLevels: null
+      enableVersioning: '1'
+      propagateEntries: '1'
+    siteSettings:
+      default:
+        class: craft\models\Section_SiteSettings
+        attributes:
+          enabledByDefault: '1'
+          hasUrls: '1'
+          uriFormat: '{parent.uri}/{slug}'
+          template: _entry
+    entryTypes:
+      pages:
+        class: craft\models\EntryType
+        attributes:
+          name: Pages
+          handle: pages
+          hasTitleField: '1'
+          titleLabel: Title
+          titleFormat: null
+        fieldLayout:
+          fields: {  }
 globalSets: {  }
 categoryGroups: {  }
 tagGroups: {  }

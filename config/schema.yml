@@ -1,0 +1,153 @@
+plugins:
+  agnostic-fetch:
+    isEnabled: true
+    isInstalled: true
+    settings: {  }
+  element-map:
+    isEnabled: true
+    isInstalled: true
+    settings: {  }
+  expanded-singles:
+    isEnabled: true
+    isInstalled: true
+    settings:
+      expandSingles: '1'
+      redirectToEntry: '1'
+  redactor:
+    isEnabled: true
+    isInstalled: true
+    settings: {  }
+  schematic:
+    isEnabled: true
+    isInstalled: true
+    settings: {  }
+  twig-perversion:
+    isEnabled: true
+    isInstalled: true
+    settings: {  }
+  typogrify:
+    isEnabled: true
+    isInstalled: true
+    settings:
+      set_tags_to_ignore:
+        - code
+        - head
+        - kbd
+        - object
+        - option
+        - pre
+        - samp
+        - script
+        - noscript
+        - noembed
+        - select
+        - style
+        - textarea
+        - title
+        - var
+        - math
+      set_classes_to_ignore:
+        - vcard
+        - noTypo
+      set_ids_to_ignore: {  }
+      set_smart_quotes: true
+      set_smart_quotes_primary: doubleCurled
+      set_smart_quotes_secondary: singleCurled
+      set_smart_dashes: true
+      set_smart_dashes_style: traditionalUS
+      set_smart_ellipses: true
+      set_smart_diacritics: true
+      set_diacritic_language: en-US
+      set_diacritic_custom_replacements: {  }
+      set_smart_marks: true
+      set_smart_math: true
+      set_smart_exponents: true
+      set_smart_fractions: true
+      set_smart_ordinal_suffix: true
+      set_single_character_word_spacing: true
+      set_fraction_spacing: true
+      set_unit_spacing: true
+      set_french_punctuation_spacing: false
+      set_units: {  }
+      set_dash_spacing: true
+      set_space_collapse: true
+      set_true_no_break_narrow_space: false
+      set_dewidow: true
+      set_max_dewidow_length: 5
+      set_dewidow_word_number: 1
+      set_max_dewidow_pull: 5
+      set_wrap_hard_hyphens: true
+      set_url_wrap: true
+      set_email_wrap: true
+      set_min_after_url_wrap: 5
+      set_style_ampersands: true
+      set_style_caps: true
+      set_style_initial_quotes: true
+      set_style_numbers: true
+      set_initial_quote_tags:
+        - p
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+        - blockquote
+        - li
+        - dd
+        - dt
+      set_hyphenation: true
+      set_hyphenation_language: en-US
+      set_min_length_hyphenation: 5
+      set_min_before_hyphenation: 3
+      set_min_after_hyphenation: 2
+      set_hyphenate_headings: true
+      set_hyphenate_all_caps: true
+      set_hyphenate_title_case: true
+      set_hyphenation_exceptions: {  }
+      set_ignore_parser_errors: true
+      set_parser_errors_handler: null
+sites:
+  default:
+    class: craft\models\Site
+    attributes:
+      name: Bootstrap
+      handle: default
+      language: en-AU
+      primary: '1'
+      hasUrls: '1'
+      originalName: null
+      originalBaseUrl: null
+      baseUrl: '@web/'
+      sortOrder: '1'
+    group: Bootstrap
+volumes: {  }
+assetTransforms: {  }
+emailSettings:
+  settings:
+    fromEmail: admin@punchbuggy.com.au
+    fromName: Bootstrap
+    transportType: craft\mail\transportadapters\Sendmail
+fields: {  }
+generalSettings:
+  settings:
+    edition: 0
+    timezone: Australia/Sydney
+    name: Bootstrap
+    'on': '1'
+    maintenance: '0'
+sections: {  }
+globalSets: {  }
+categoryGroups: {  }
+tagGroups: {  }
+userGroups: {  }
+userSettings:
+  settings:
+    requireEmailVerification: true
+    allowPublicRegistration: false
+    defaultGroup: null
+    photoSubpath: ''
+    photoVolume: null
+  fieldLayout:
+    fields: {  }
+elementIndexSettings: {  }

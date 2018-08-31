@@ -1,0 +1,8 @@
+{# Get the first non-redirect child and go there #}
+{% set child = entry.children()
+	.type('not firstChildRedirect')
+	.limit(1)
+	.one()
+%}
+
+{% redirect child.url %}

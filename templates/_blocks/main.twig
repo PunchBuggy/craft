@@ -1,0 +1,6 @@
+{% for block in blocks|all %}
+	{% include [
+		"_blocks/#{block.type.handle}",
+		"_blocks/fallback"
+	] %}
+{% endfor %}

@@ -128,7 +128,50 @@ emailSettings:
     fromEmail: admin@punchbuggy.com.au
     fromName: Bootstrap
     transportType: craft\mail\transportadapters\Sendmail
-fields: {  }
+fields:
+  body:
+    class: craft\fields\Matrix
+    attributes:
+      minBlocks: ''
+      maxBlocks: ''
+      localizeBlocks: false
+      name: Body
+      handle: body
+      instructions: ''
+      translationMethod: site
+      translationKeyFormat: null
+      oldHandle: null
+      columnPrefix: null
+      required: false
+      sortOrder: null
+    group: Common
+    blockTypes:
+      richText:
+        class: craft\models\MatrixBlockType
+        attributes:
+          name: 'Rich Text'
+          handle: richText
+          sortOrder: '1'
+        fields:
+          richText:
+            class: craft\redactor\Field
+            attributes:
+              redactorConfig: ''
+              purifierConfig: ''
+              cleanupHtml: '1'
+              purifyHtml: '1'
+              columnType: text
+              availableVolumes: '*'
+              availableTransforms: '*'
+              name: 'Rich Text'
+              handle: richText
+              instructions: ''
+              translationMethod: none
+              translationKeyFormat: null
+              oldHandle: null
+              columnPrefix: null
+              required: false
+              sortOrder: '1'
 generalSettings:
   settings:
     edition: 0
@@ -144,7 +187,7 @@ sections:
       handle: pages
       type: structure
       maxLevels: null
-      enableVersioning: '1'
+      enableVersioning: '0'
       propagateEntries: '1'
     siteSettings:
       default:
@@ -155,11 +198,23 @@ sections:
           uriFormat: '{parent.uri}/{slug}'
           template: _entry
     entryTypes:
-      pages:
+      page:
         class: craft\models\EntryType
         attributes:
-          name: Pages
-          handle: pages
+          name: Page
+          handle: page
+          hasTitleField: '1'
+          titleLabel: Title
+          titleFormat: null
+        fieldLayout:
+          tabs:
+            Page:
+              body: '0'
+      firstChildRedirect:
+        class: craft\models\EntryType
+        attributes:
+          name: 'First Child Redirect'
+          handle: firstChildRedirect
           hasTitleField: '1'
           titleLabel: Title
           titleFormat: null

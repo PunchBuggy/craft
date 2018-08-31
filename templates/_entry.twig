@@ -1,5 +1,10 @@
-{% extends '_layouts/main' %}
+{# Check if it's an ajax request #}
+{% set ajax = craft.app.request.isAjax and not craft.app.request.isLivePreview %}
 
+{# Load the appropriate layout #}
+{% extends '_layouts/' ~ (ajax? 'ajax' : 'main') %}
+
+{# Main content gets passed out to the template stack #}
 {% block main %}
 	{% include [
 		"_sections/#{entry.section.handle}",

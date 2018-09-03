@@ -1,0 +1,11 @@
+{% set articles = craft.entries({
+	section: 'blog'
+})|all %}
+
+<ul>
+	{% for article in articles %}
+		<li>
+			<a href="{{ entry.url }}/{{ article.slug }}">{{ article.title }}</a>
+		</li>
+	{% endfor %}
+</ul>

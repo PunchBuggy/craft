@@ -180,6 +180,34 @@ generalSettings:
     'on': '1'
     maintenance: '0'
 sections:
+  blog:
+    class: craft\models\Section
+    attributes:
+      name: Blog
+      handle: blog
+      type: channel
+      maxLevels: null
+      enableVersioning: '0'
+      propagateEntries: '1'
+    siteSettings:
+      default:
+        class: craft\models\Section_SiteSettings
+        attributes:
+          enabledByDefault: '1'
+          hasUrls: '1'
+          uriFormat: 'blog/{slug}'
+          template: _listingRedirect
+    entryTypes:
+      blog:
+        class: craft\models\EntryType
+        attributes:
+          name: Blog
+          handle: blog
+          hasTitleField: '1'
+          titleLabel: Title
+          titleFormat: null
+        fieldLayout:
+          fields: {  }
   pages:
     class: craft\models\Section
     attributes:
@@ -215,6 +243,16 @@ sections:
         attributes:
           name: 'First Child Redirect'
           handle: firstChildRedirect
+          hasTitleField: '1'
+          titleLabel: Title
+          titleFormat: null
+        fieldLayout:
+          fields: {  }
+      blogListing:
+        class: craft\models\EntryType
+        attributes:
+          name: 'Blog Listing'
+          handle: blogListing
           hasTitleField: '1'
           titleLabel: Title
           titleFormat: null

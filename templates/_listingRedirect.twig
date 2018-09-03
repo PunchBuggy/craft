@@ -1,0 +1,6 @@
+{# Work out the listing page for this entry and redirect over to the 'correct' url #}
+{% set listing = craft.entries({
+	section: 'pages',
+	type: entry.type ~ 'Listing'
+})|one %}
+{% redirect listing.url ~ '/' ~ entry.slug %}

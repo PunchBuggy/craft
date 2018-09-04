@@ -1,7 +1,12 @@
+{%- spaceless -%}
+{# Get the page title, custom > entry > nothing #}
+{% set pageTitle = pageTitle ?? (entry is defined ? entry.title : null) %}
+{%- endspaceless -%}
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bootstrap</title>
+	<title>{{ pageTitle? pageTitle ~ ' - ' }}{{ currentSite.name }}</title>
 </head>
 <body>
 	{% block main %}

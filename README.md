@@ -17,7 +17,7 @@ You will need [composer](https://getcomposer.org/) to follow these instructions.
 4. Hydrate the rest of the system with the following commands:
 
         ./craft migrate
-        ./craft schematic/import
+        ./craft schematic/import --force
 
 ---
 

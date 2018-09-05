@@ -1,6 +1,12 @@
 {# Work out the listing page for this entry and redirect over to the 'correct' url #}
-{% set listing = craft.entries({
+{% set parent = craft.entries({
 	section: 'pages',
 	type: entry.type ~ 'Listing'
 })|one %}
-{% redirect listing.url ~ '/' ~ entry.slug %}
+
+{% if listing.url in "#{craft.app.request.hostInfo}/#{craft.app.request.pathInfo}" %}
+	{# Just pull in the main stack if the listing URL _is_ the correct url by chance #}
+	{% include '_entry' %}
+{% else %}
+	{% redirect parent.url ~ '/' ~ entry.slug %}
+{% endif %}
